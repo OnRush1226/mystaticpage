@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>相信未来 - 一个.NET程序员的个人博客网站</title>
+    <title>韩成虎</title>
     <link rel="shortcut icon" href="./images/Logo_40.png" type="image/x-icon">
     <!--Layui-->
     <link href="./plug/layui/css/layui.css" rel="stylesheet" />
@@ -372,6 +372,28 @@
             </div>
         </div>
     </div>
+    
+    <!--Title定时器-->
+    <script type="text/javascript">
+		var hour=0;
+		var minu=0;
+		var sec=0;
+		setInterval(function(){
+			sec++;
+			if (sec>59) {
+				sec=0;
+				minu++;
+			}
+			if(minu>59){
+				hour++;
+				minu=0;
+			}
+			document.title="您已用时："+hour+"小时"+minu+"分钟"+sec+"秒";
+			//document.title=new Date().toLocaleString();
+		},1000);
+		
+    </script>
+    
     <!--遮罩-->
     <div class="blog-mask animated layui-hide"></div>
     <!-- layui.js -->
