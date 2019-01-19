@@ -14,6 +14,10 @@
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>韩成虎</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="./images/Logo_40.png" type="image/x-icon">
     <!--Layui-->
     <link href="./plug/layui/css/layui.css" rel="stylesheet" />
@@ -265,7 +269,7 @@
                         <div class="blogerinfo-figure">
                             <img src="./images/Absolutely.jpg" alt="Absolutely" />
                         </div>
-                        <p class="blogerinfo-nickname">Absolutely</p>
+                        <p id="hanhu" class="blogerinfo-nickname animated infinite bounce">韩&nbsp;&nbsp;&nbsp;虎</p>
                         <p class="blogerinfo-introduce">一枚90后程序员，.NET开发工程师</p>
                         <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;安徽 - 芜湖</p>
                         <hr />
@@ -388,12 +392,16 @@
 				hour++;
 				minu=0;
 			}
+            if(sec % 2 == 0){
+                $("#hanhu").css("color","red");
+            }else{
+                $("#hanhu").css("color","yellow");
+            }
 			document.title="您已用时："+hour+"小时"+minu+"分钟"+sec+"秒";
 			//document.title=new Date().toLocaleString();
 		},1000);
-		
     </script>
-    
+
     <!--遮罩-->
     <div class="blog-mask animated layui-hide"></div>
     <!-- layui.js -->
